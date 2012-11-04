@@ -1,0 +1,28 @@
+[18-Jan-2012 05:20:52] PHP Warning:  Invalid argument supplied for foreach() in /home/design61/public_html/fulumail/sendemail.php on line 43
+[18-Jan-2012 05:20:52] PHP Warning:  Invalid argument supplied for foreach() in /home/design61/public_html/fulumail/sendemail.php on line 22
+[19-Jan-2012 01:40:39] PHP Fatal error:  Call to undefined function  fixfilesarray() in /home/design61/public_html/fulumail/sendemail.php on line 65
+[19-Jan-2012 01:41:15] PHP Fatal error:  Call to undefined function  fixfilesarray() in /home/design61/public_html/fulumail/sendemail.php on line 65
+[19-Jan-2012 01:43:15] PHP Parse error:  syntax error, unexpected '{' in /home/design61/public_html/fulumail/sendemail.php on line 47
+[19-Jan-2012 01:44:04] PHP Fatal error:  Call to undefined function  fixfilesarray() in /home/design61/public_html/fulumail/sendemail.php on line 70
+[20-Jan-2012 03:32:12] PHP Fatal error:  Call to undefined function  fixfilesarray() in /home/design61/public_html/fulumail/sendemail.php on line 56
+[20-Jan-2012 03:37:04] PHP Fatal error:  Call to undefined function  fixfilesarray() in /home/design61/public_html/fulumail/sendemail.php on line 56
+[20-Jan-2012 05:58:46] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Unknown MySQL server host 'd' (1) in /home/design61/public_html/fulumail/config.php on line 6
+[20-Jan-2012 05:58:46] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'design61'@'localhost' (using password: NO) in /home/design61/public_html/fulumail/config.php on line 7
+[20-Jan-2012 05:58:46] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/design61/public_html/fulumail/config.php on line 7
+[20-Jan-2012 05:59:30] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Unknown MySQL server host 'd' (1) in /home/design61/public_html/fulumail/config.php on line 6
+[20-Jan-2012 05:59:30] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: Access denied for user 'design61'@'localhost' (using password: NO) in /home/design61/public_html/fulumail/config.php on line 7
+[20-Jan-2012 05:59:30] PHP Warning:  mysql_select_db() [<a href='function.mysql-select-db'>function.mysql-select-db</a>]: A link to the server could not be established in /home/design61/public_html/fulumail/config.php on line 7
+[20-Jan-2012 05:59:30] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'design61'@'localhost' (using password: NO) in /home/design61/public_html/fulumail/sendemail.php on line 77
+[20-Jan-2012 05:59:30] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home/design61/public_html/fulumail/sendemail.php on line 77
+[20-Jan-2012 07:34:53] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/design61/public_html/fulumail/rating.php on line 15
+[20-Jan-2012 07:34:53] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 20
+[20-Jan-2012 07:34:53] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 21
+[20-Jan-2012 07:34:59] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/design61/public_html/fulumail/rating.php on line 15
+[20-Jan-2012 07:34:59] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 20
+[20-Jan-2012 07:34:59] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 21
+[20-Jan-2012 07:35:01] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/design61/public_html/fulumail/rating.php on line 15
+[20-Jan-2012 07:35:01] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 20
+[20-Jan-2012 07:35:01] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 21
+[20-Jan-2012 07:35:07] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home/design61/public_html/fulumail/rating.php on line 15
+[20-Jan-2012 07:35:07] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 20
+[20-Jan-2012 07:35:07] PHP Warning:  Division by zero in /home/design61/public_html/fulumail/rating.php on line 21

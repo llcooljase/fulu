@@ -1,0 +1,131 @@
+<?php
+if(isset($_FILES['image']))
+{
+move_uploaded_file($_FILES['image']['tmp_name'],'images/preview/'.$_FILES['image']['name']);
+echo 'images/preview/'.$_FILES['image']['name'];
+}
+else{
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Welcome to Fulumail</title>
+<link href="css/home.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+* {  font-size: 96%; }
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+</style>
+
+</head>
+<body>
+<?php
+
+if(empty($_REQUEST['email']))
+{$mes='Please enter email';
+}
+else if(empty($_REQUEST['terms']))
+{$mes='Please select terms and conditions';
+}
+else if(empty($_REQUEST['comment']))
+{$mes='Please enter comment';
+}
+else {$mes='';}
+//print_r($_POST);
+
+
+
+            $from = "info@61designstreet.com";
+            $to = $_REQUEST['email'];
+            $subject = "you got one new message from FULU";
+            $message = $_REQUEST['video'].'/r/n/r/n'.$_REQUEST['comment'];
+            $headers = "From: $from";
+
+            // boundary
+            $semi_rand = md5(time());
+            $mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+            // headers for attachment
+            $headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\"";
+
+            // multipart boundary
+            $message = "--{$mime_boundary}\n" . "Content-Type: text/plain; charset=\"iso-8859-1\"\n"."Content-Transfer-Encoding: 7bit\n\n" . $message . "\n\n";
+            fixFilesArray($_FILES['picture']);
+            foreach ($_FILES['picture'] as $position => $file) 
+            {
+                    // should output array with indices name, type, tmp_name, error, size
+                    $message .= "--{$mime_boundary}\n";
+                    $fp     = @fopen($file['tmp_name'],"rb");
+                    $data   = @fread($fp,filesize($file['tmp_name']));
+                    @fclose($fp);
+                $data = chunk_split(base64_encode($data));
+                $message .= "Content-Type: application/octet-stream; name=\"".$file['name']."\"\n"."Content-Description: ".$file['name']."\n" ."Content-Disposition: attachment;\n" . " filename=\"".$file['name']."\";size=".$file['size'].";\n"."Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
+            }
+            $message .= "--{$mime_boundary}--";
+            $returnpath = "-f" . $from;
+            $ok = @mail($to, $subject, $message, $headers, $returnpath);
+            if($ok){ $mes= 'Mail Sent Successfully'; } else { $mes='Error. Please Try Later'; }
+    }
+
+    function fixFilesArray(&$files)
+    {
+            $names = array( 'name' => 1, 'type' => 1, 'tmp_name' => 1, 'error' => 1, 'size' => 1);
+
+            foreach ($files as $key => $part) {
+                    // only deal with valid keys and multiple files
+                    $key = (string) $key;
+                    if (isset($names[$key]) && is_array($part)) {
+                            foreach ($part as $position => $value) {
+                                    $files[$position][$key] = $value;
+                            }
+                            // remove old key reference
+                            unset($files[$key]);
+                    }
+            }
+    }
+    ?>
+    <div class="innermain">	
+<header>
+<aside class="placeholder">
+	
+    <article class="logocontent"> <figure><a href="home.html"><img src="images/logo.png"/></a></figure></article>
+	<div class="clear"></div>
+    
+</aside>
+</header>
+	<aside class="placeholder">
+    
+    		<p class="devider"></p>
+          <label class="lable">
+  
+ <a href="javascript:history.go(-1)">Back</a><br>
+            <?php
+			echo $mes;
+			?></label>
+       
+    </aside>
+
+
+
+
+<footer class="innerfooter">
+<aside class="placeholder">
+ <p class="pluck"><img src="images/fulu.png" /></p> 
+    <aside class="follow"><aside class="socialnetworks"><a href="http://www.facebook.com/pages/FuLumailcom/291322157583448" class="fb" target="_blank"></a><a href="https://twitter.com/#!/fulumaster" class="tw" target="_blank"></a></aside>
+    </aside>
+   	  <p class="footertxt">Copyrights fulumail.com. All right reserved. We are not a hate mail service. <br>
+Our goal is not to achieve a form of cyber bullying or anything of the type but rather a forum to mainstream anonymous emotions
+<br>
+<a href="rights.html">Rights and Regulations</a></p>
+    </aside>
+
+</footer>
+</div>
+</body>
+</html>
+<?php
+}
+	?>
